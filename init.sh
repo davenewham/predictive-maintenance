@@ -11,7 +11,7 @@ sudo yum install maven git screen jq -y
 
 # Install Spark and Kafka
 sudo yum install mapr-spark mapr-spark-master mapr-spark-historyserver mapr-spark-thriftserver mapr-kafka -y
-cp /opt/mapr/spark/spark-2.2.1/conf/slaves.template /opt/mapr/spark/spark-2.2.1/conf/slaves
+cp /opt/mapr/spark/spark-2.3.1/conf/slaves.template /opt/mapr/spark/spark-2.3.1/conf/slaves
 sudo /opt/mapr/server/configure.sh -R
 
 # Set the local timezone so Grafana timestamps
