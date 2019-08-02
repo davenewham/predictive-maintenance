@@ -6,23 +6,23 @@
 ###############################################################################
 
 # Reduce memory usage required by the sandbox
-sudo apt-get remove mapr-hive mapr-spark -y
-sudo apt-get install maven git screen jq -y
+sudo yum remove mapr-hive mapr-spark -y
+sudo yum install maven git screen jq -y
 
 # Install Spark and Kafka
-sudo apt-get install mapr-spark mapr-spark-master mapr-spark-historyserver mapr-spark-thriftserver mapr-kafka -y
+sudo yum install mapr-spark mapr-spark-master mapr-spark-historyserver mapr-spark-thriftserver mapr-kafka -y
 cp /opt/mapr/spark/spark-2.2.1/conf/slaves.template /opt/mapr/spark/spark-2.2.1/conf/slaves
 sudo /opt/mapr/server/configure.sh -R
 
 # Set the local timezone so Grafana timestamps
-#sudo apt-get --download-only install tzdata
+#sudo yum --download-only install tzdata
 #sudo dpkg -i  /var/cache/apt/archives/tzdata*.deb
 #sudo rm /etc/localtime
 #sudo ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 
 # Install OpenTSDB and Grafana:
-sudo apt-get install mapr-opentsdb -y
-sudo apt-get install mapr-grafana -y
+sudo yum install mapr-opentsdb -y
+sudo yum install mapr-grafana -y
 
 # Enabled write access to opentsdb
 sudo echo "tsd.http.request.cors_domains=*" >> /opt/mapr/opentsdb/opentsdb-2.4.0/etc/opentsdb/opentsdb.conf 
