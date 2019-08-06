@@ -6,11 +6,11 @@
 ###############################################################################
 
 # Reduce memory usage required by the sandbox
-sudo yum remove mapr-hive mapr-spark -y
-sudo yum install maven git screen jq -y
+sudo apt-get remove mapr-hive mapr-spark -y
+sudo apt-get install maven git screen jq -y
 
 # Install Spark and Kafka
-sudo yum install mapr-spark mapr-spark-master mapr-spark-historyserver mapr-spark-thriftserver mapr-kafka -y
+sudo apt-get install mapr-spark mapr-spark-master mapr-spark-historyserver mapr-spark-thriftserver mapr-kafka -y
 cp /opt/mapr/spark/spark-2.3.1/conf/slaves.template /opt/mapr/spark/spark-2.3.1/conf/slaves
 sudo /opt/mapr/server/configure.sh -R
 
